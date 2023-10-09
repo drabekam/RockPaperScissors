@@ -27,9 +27,9 @@ public class RockPaperScissorsFrame extends JFrame {
         resultTextArea.setEditable(false);
 
         // Game option buttons with their associated images.
-        JButton rockButton = new JButton("Rock", new ImageIcon("rock.png"));
-        JButton paperButton = new JButton("Paper", new ImageIcon("paper.png"));
-        JButton scissorsButton = new JButton("Scissors", new ImageIcon("scissors.png"));
+        JButton rockButton = new JButton("Rock", new ImageIcon("rock.jpeg"));
+        JButton paperButton = new JButton("Paper", new ImageIcon("paper.jpeg"));
+        JButton scissorsButton = new JButton("Scissors", new ImageIcon("scissors.jpeg"));
         JButton quitButton = new JButton("Quit");
 
         rockButton.addActionListener(e -> playGame("Rock"));
