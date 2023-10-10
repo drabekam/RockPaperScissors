@@ -25,12 +25,31 @@ public class RockPaperScissorsFrame extends JFrame {
         statsPanel = new JPanel();
         resultTextArea = new JTextArea(10, 30);
         resultTextArea.setEditable(false);
+        int imageWidth = 50;  // Define the width you want
+        int imageHeight = 50; // Define the height you want
 
-        // Game option buttons with their associated images.
-        JButton rockButton = new JButton("Rock", new ImageIcon("rock.jpeg"));
-        JButton paperButton = new JButton("Paper", new ImageIcon("paper.jpeg"));
-        JButton scissorsButton = new JButton("Scissors", new ImageIcon("scissors.jpeg"));
+        // Resizing for the rock image
+        Image rockImage = new ImageIcon("/Users/andrewdrabek/School/Programming 2/Rock_Paper_Scissors/src/rock.jpeg").getImage();
+        Image scaledRockImage = rockImage.getScaledInstance(imageWidth, imageHeight, Image.SCALE_SMOOTH);
+        JButton rockButton = new JButton("Rock", new ImageIcon(scaledRockImage));
+
+        // Resizing for the paper image
+        Image paperImage = new ImageIcon("/Users/andrewdrabek/School/Programming 2/Rock_Paper_Scissors/src/paper.jpeg").getImage();
+        Image scaledPaperImage = paperImage.getScaledInstance(imageWidth, imageHeight, Image.SCALE_SMOOTH);
+        JButton paperButton = new JButton("Paper", new ImageIcon(scaledPaperImage));
+
+        // Resizing for the scissors image
+        Image scissorsImage = new ImageIcon("/Users/andrewdrabek/School/Programming 2/Rock_Paper_Scissors/src/scissors.jpeg").getImage();
+        Image scaledScissorsImage = scissorsImage.getScaledInstance(imageWidth, imageHeight, Image.SCALE_SMOOTH);
+        JButton scissorsButton = new JButton("Scissors", new ImageIcon(scaledScissorsImage));
+
         JButton quitButton = new JButton("Quit");
+
+        // Setting a custom size for the buttons
+        Dimension customSize = new Dimension(100, 50);  // Width of 100 and height of 50
+        rockButton.setPreferredSize(customSize);
+        paperButton.setPreferredSize(customSize);
+        scissorsButton.setPreferredSize(customSize);
 
         rockButton.addActionListener(e -> playGame("Rock"));
         paperButton.addActionListener(e -> playGame("Paper"));
